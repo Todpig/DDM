@@ -1,0 +1,61 @@
+// Questão 1 – Verificação de idade
+function verificarIdade(idade: number): string {
+  if (idade < 12) return "Criança";
+  else if (idade < 18) return "Adolescente";
+  else return "Adulto";
+}
+
+// Questão 2 – Número par ou ímpar
+function parOuImpar(numero: number): string {
+  return numero % 2 === 0 ? "Par" : "Ímpar";
+}
+
+// Questão 3 – Escolha de linguagem
+function escolherLinguagem(opcao: number): string {
+  switch (opcao) {
+    case 1:
+      return "TypeScript";
+    case 2:
+      return "JavaScript";
+    case 3:
+      return "Python";
+    default:
+      return "Linguagem não cadastrada";
+  }
+}
+
+// Questão 4 – Verificador de saldo
+function verificarSaldo(saldo: number): string {
+  return saldo >= 0 ? "Saldo OK" : "Saldo negativo";
+}
+
+// Questão 5 – Votação obrigatória
+function verificarObrigatoriedadeDoVoto(idade: number): string {
+  if (idade < 16) return "Não vota";
+  else if ((idade >= 16 && idade < 18) || idade > 70) return "Voto facultativo";
+  else return "Voto obrigatório";
+}
+
+// Questão 6 – Nota do aluno
+function verificarNota(nota: number): string {
+  if (nota >= 7) return "Aprovado";
+  else if (nota >= 5) return "Recuperação";
+  else return "Reprovado";
+}
+
+// Questão 7 – Sistema de Notas e Classificação Final
+function classificarAluno(nome: string, nota1: number, nota2: number, nota3: number, frequencia: number): string {
+  const media = (nota1 + nota2 + nota3) / 3;
+
+  if (frequencia < 75) {
+    return `${nome} está Reprovado por falta.`;
+  }
+
+  if (media >= 7) {
+    return `${nome} está Aprovado.`;
+  } else if (media >= 5) {
+    return `${nome} está em Recuperação.`;
+  } else {
+    return `${nome} está Reprovado por nota.`;
+  }
+}

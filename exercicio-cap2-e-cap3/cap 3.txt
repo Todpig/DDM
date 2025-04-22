@@ -1,0 +1,65 @@
+// Questão 1 – Imprimindo números de 1 a 10
+function imprimirNumeros(): void {
+  for (let i = 1; i <= 10; i++) {
+    console.log(i);
+  }
+}
+
+// Questão 2 – Soma de números pares entre 1 e 20
+function somarNumerosPares(): void {
+  let i = 1;
+  let soma = 0;
+
+  while (i <= 20) {
+    if (i % 2 === 0) {
+      soma += i;
+    }
+    i++;
+  }
+
+  console.log("Soma dos pares entre 1 e 20:", soma);
+}
+
+// Questão 3 – Iterando sobre um array de cidades
+function visitarCidades(): void {
+  const cidades = ["São Paulo", "Rio de Janeiro", "Salvador", "Curitiba", "Fortaleza"];
+
+  for (const cidade of cidades) {
+    console.log(`Visitando: ${cidade}`);
+  }
+}
+
+// Questão 4 – Exibindo propriedades de um objeto
+function exibirPropriedades(): void {
+  const aluno = {
+    nome: "Maria",
+    idade: 21,
+    curso: "Análise e Desenvolvimento de Sistemas"
+  };
+
+  for (const chave in aluno) {
+    console.log(`${chave}: ${aluno[chave as keyof typeof aluno]}`);
+  }
+}
+
+// Questão 5 – Sistema de notas e aprovação
+type Aluno = {
+  nome: string;
+  notas: number[];
+};
+
+function verificarAprovacao(alunos: Aluno[]): void {
+  for (const aluno of alunos) {
+    const media = aluno.notas.reduce((acc, nota) => acc + nota, 0) / aluno.notas.length;
+    const situacao = media >= 7 ? "Aprovado" : "Reprovado";
+    console.log(`${aluno.nome} - Média: ${media.toFixed(2)} - Situação: ${situacao}`);
+  }
+}
+// Exemplo de chamada:
+const alunos = [
+  { nome: "Ana", notas: [8, 7, 9] },
+  { nome: "Bruno", notas: [5, 6, 5] },
+  { nome: "Carlos", notas: [7, 7, 7] }
+];
+
+verificarAprovacao(alunos);
